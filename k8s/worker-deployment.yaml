@@ -13,5 +13,10 @@ spec:
         component: worker
     spec:
       containers:
-      - name: myapp
+      - name: worker
         image: mttlong/multi-worker
+        env:
+          - name: REDIS_HOST
+            value: redis-cluster-ip-service
+          - name: REDIS_PORT
+            value: '6379'
